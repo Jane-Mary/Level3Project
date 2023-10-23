@@ -1,0 +1,233 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+
+}
+
+//Signup and Signin form
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./assets/background-photo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36.8rem;
+    width: 30rem;
+
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .form {
+    color: white;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+    border: 2px solid grey;
+    border-radius: 5px;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    justify-content: center;
+    height: 4rem;
+
+    p {
+        font-size: smaller;
+        color: crimson;
+    }
+
+}
+
+h2,
+span {
+    margin: 3px 0;
+    text-align: center;
+}
+
+.form-group3 {
+    display: flex;
+    width: 15rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+hr {
+    width: 6rem;
+    height: 2px;
+    background-color: black;
+    border: 0;
+}
+
+input {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 4px;
+    border: 0;
+    margin: 2px 0;
+    padding: 0 5px;
+    outline: none;
+    background-color: #ede9e9;
+}
+
+.form-group2 {
+    width: 15rem;
+
+    a {
+        color: lightblue;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+input[type=submit] {
+    width: 15rem;
+    background-color: rgb(56, 56, 247);
+    color: white;
+
+}
+
+input[type=submit]:disabled {
+    background-color: gray;
+}
+
+input[type=submit]:disabled:hover {
+    background-color: gray;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(6, 6, 110);
+}
+
+button {
+    width: 4.5rem;
+    height: 2rem;
+    border-radius: 4px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+
+}
+
+button:hover {
+    background-color: lightblue;
+}
+
+a {
+    text-decoration: none;
+    color: lightblue;
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.rem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group4 {
+    display: flex;
+    justify-content: space-between;
+    width: 15rem;
+    align-items: center;
+    height: 1rem;
+    margin: 0;
+
+    a {
+        color: lightblue;
+    }
+}
+
+input[type="checkbox"] {
+    width: 15px;
+}
+
+//Images on the pages
+#item {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+
+    .item {
+        // &:hover {
+        //     transform: scale(1.01);
+        // }
+        
+        img {
+            border-radius: 0.5rem;
+            width: 100%;
+            height: 90%;
+        }
+
+        .text{
+            text-align: center;
+            text-decoration: underline;
+        }
+    }
+
+
+}
+
+.modal {
+   display: flex;
+   padding: 1rem 1rem;
+   width: 65vw;
+    .image {
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        img {
+            width: 25rem;
+            height: 20rem;
+            border-radius: 1rem;
+
+        }
+    }
+    .text {
+        width: 50%;
+        text-align: center;
+        word-spacing: 8px;
+        
+    }
+}

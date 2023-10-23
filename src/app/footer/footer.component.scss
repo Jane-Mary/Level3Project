@@ -1,0 +1,23 @@
+.footer {
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    background-color: #00a8e8;
+    border: none;
+    height: 3rem;
+    align-items: center;
+    padding: 1rem 5rem;
+
+    ul {
+
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        cursor: pointer;
+
+        li {
+            margin: 0 2rem 0 0;
+        }
+
+    }
+}

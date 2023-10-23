@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+
+<div id="item">
+    <div class="item" *ngFor="let room of liv">
+        <img (click)="openDialog(room)" src="{{room.image}}" alt="">
+        <div class="text">{{room.name}}</div>
+    </div>
+    
+</div>
+<app-footer></app-footer>
