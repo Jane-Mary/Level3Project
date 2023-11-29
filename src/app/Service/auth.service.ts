@@ -63,6 +63,7 @@ private passdecrypt(password: string): any{
     
     let users: Array<user> = this.store.select('users') ?? [];
     user['password'] = this.passencrypt(user.password)
+    user['favourites']= []
     user['id'] = Date.now();
     user['created_at'] = this.getCurrentDate();
     delete user.confirm_password;

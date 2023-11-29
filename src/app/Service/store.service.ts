@@ -22,6 +22,8 @@ export class StoreService {
 
     return content;
   }
-
+remove(key:string){
+  localStorage.removeItem(key)
+}
 
 }

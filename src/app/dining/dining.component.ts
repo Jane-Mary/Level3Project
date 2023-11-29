@@ -2,6 +2,8 @@ import { Component,Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog'
 import {MatButtonModule} from '@angular/material/button'
 import { ActivatedRoute } from '@angular/router';
+import { design } from '../user';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'app-dining',
@@ -9,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./dining.component.scss']
 })
 export class DiningComponent {
-  din= [
+  din: design[]= [
     {
       name: "Round Table",
       price: "150,000frs",
@@ -74,10 +76,12 @@ export class DiningComponent {
       description: "A small art piece or a tiny pattern on the window can make a massive difference to brighten up space. A simple dining room can be inviting, welcoming and cosy. Light tables and chairs that aren’t bulky are ideal for simple dining room interiors. Make sure your walls are brightly coloured as it creates an illusion of a big space. Just add lovely framed artwork combined with a simple dining table and white chairs for a clean look. Add a wood top table with industrial lamps above for a dash of old-world charm. Integrate sleek lighting options like lanterns, cascading bulbs or pendant lights to create the perfect vibe.",
     },
   ];
+
   
   constructor(
     public dialog: MatDialog,
     private route: ActivatedRoute,
+    private favourites: FavoritesService
   ) { }
 
   
@@ -86,7 +90,10 @@ export class DiningComponent {
     this.dialog.open(Din, { data: item },);
     
   }
-
+  addtofav(restaurant: any) {
+    this.favourites.addtofav(restaurant)
+    window.alert('Added to favourites')
+   }
   
 }
 

@@ -2,6 +2,8 @@ import { Component,Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog'
 import {MatButtonModule} from '@angular/material/button'
 import { ActivatedRoute } from '@angular/router';
+import { design } from '../user';
+import { FavoritesService } from '../favorites.service';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./bed.component.scss']
 })
 export class BedComponent {
-  bed = [
+  bed:design[]= [
     {
       name: "Modern Boho",
       price: "150,000frs",
@@ -75,10 +77,12 @@ export class BedComponent {
       description: "Incorporating natural elements brings a sense of tranquility and warmth to a modern bedroom. Just ask Matthew Harris, who incorporated oak paneling into the primary bedroom of his Lisbon apartment, topping it off with an opulent Gubi pendant. Further enhance the outdoor-indoor connection by allowing natural light to flood the space through large windows or skylights.",
     },
   ];
+
   
   constructor(
     public dialog: MatDialog,
     private route: ActivatedRoute,
+    private favourites: FavoritesService
   ) { }
 
   
@@ -87,6 +91,10 @@ export class BedComponent {
     this.dialog.open(Bed, { data: item },);
     
   }
+  addtofav(restaurant: any) {
+    this.favourites.addtofav(restaurant)
+    window.alert('Added to favourites')
+   }
 
   
 }

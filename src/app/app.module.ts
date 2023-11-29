@@ -17,6 +17,7 @@ import { ModalComponent } from './modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {  MatButtonModule  } from '@angular/material/button';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FooterComponent,
     ModalComponent,
     PageNotFoundComponent,
+    FavouritesComponent,
   ],
   imports: [
     BrowserModule,

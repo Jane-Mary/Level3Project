@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div style="height: 190vh;">
+
+    <div id="item">
+        <div class="item" *ngFor="let design of designs">
+            <img (click)="openDialog(design)" src="{{design.image}}" alt="">
+            <div class="text">{{design.name}}</div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

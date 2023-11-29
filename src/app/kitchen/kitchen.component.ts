@@ -2,6 +2,8 @@ import { Component,Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog'
 import {MatButtonModule} from '@angular/material/button'
 import { ActivatedRoute } from '@angular/router';
+import { design } from '../user';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'app-kitchen',
@@ -9,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./kitchen.component.scss']
 })
 export class KitchenComponent {
-  kit = [
+  kit: design[]= [
     {
       name: "Spacy",
       price: "150,000frs",
@@ -75,9 +77,11 @@ export class KitchenComponent {
     },
   ];
   
+  
   constructor(
     public dialog: MatDialog,
     private route: ActivatedRoute,
+    private favourites: FavoritesService
   ) { }
 
   
@@ -86,7 +90,10 @@ export class KitchenComponent {
     this.dialog.open(Kit, { data: item },);
     
   }
-
+  addtofav(restaurant: any) {
+    this.favourites.addtofav(restaurant)
+    window.alert('Added to favourites')
+   }
   
 }
 

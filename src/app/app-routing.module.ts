@@ -10,17 +10,19 @@ import { DiningComponent } from './dining/dining.component';
 import { lockGuard } from './Guards/lock.guard';
 import { logoutGuard } from './Guards/logout.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'signup', pathMatch:'full'},
   {path:'signup', component:SignupComponent, title:'Signup', canActivate:[logoutGuard]},
   {path:'signin', component:SigninComponent, title:'Signin', canActivate:[logoutGuard]},
   {path:'home', component:HomeComponent,title:'Home', canActivate: [lockGuard]},
-  {path:'living', component:LivingComponent,title:'Living Room'}, 
-  {path:'bed', component:BedComponent,title:'Bedroom'},
-  {path:'kitchen', component:KitchenComponent,title:'Kitchen'},
-  {path:'dining', component:DiningComponent,title:'Dining'},
-  {path:'**', component:PageNotFoundComponent,title:'Error page'}
+  {path:'living', component:LivingComponent,title:'Living Room',canActivate: [lockGuard]}, 
+  {path:'favourites', component:FavouritesComponent, title:'favourites',canActivate: [lockGuard]},
+  {path:'bed', component:BedComponent,title:'Bedroom',canActivate: [lockGuard]},
+  {path:'kitchen', component:KitchenComponent,title:'Kitchen',canActivate: [lockGuard]},
+  {path:'dining', component:DiningComponent,title:'Dining',canActivate: [lockGuard]},
+  {path:'**', component:PageNotFoundComponent,title:'Error page',canActivate: [lockGuard]}
 
 
 ];

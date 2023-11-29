@@ -2,6 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog'
 import {MatButtonModule} from '@angular/material/button'
 import { ActivatedRoute } from '@angular/router';
+import { design } from '../user';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'app-living',
@@ -10,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LivingComponent {
 
-  liv = [
+  liv: design[] = [
     {
       name: "Shiny",
       price: "150,000frs",
@@ -79,6 +81,7 @@ export class LivingComponent {
   constructor(
     public dialog: MatDialog,
     private route: ActivatedRoute,
+    private favourites: FavoritesService
   ) { }
 
   
@@ -87,7 +90,10 @@ export class LivingComponent {
     this.dialog.open(Liv, { data: item },);
     
   }
-
+  addtofav(restaurant: any) {
+    this.favourites.addtofav(restaurant)
+    window.alert('Added to favourites')
+   }
 }
 
 
